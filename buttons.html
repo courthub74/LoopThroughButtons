@@ -9,17 +9,44 @@
 <body>
 
     <h1>Buttons to Loop through</h1>
+    <div id="buttons">
+        <button id="button" class="button1">Button 1</button>
+        <button id="button">Button 2</button>
+        <button id="button">Button 3</button>
+        <button id="button">Button 4</button>
+        <button id="button">Button 5</button>
+    </div>
+    <hr>
 
-        <button type="submit" id="button1">Button</button>
-        <button id="button">Button</button>
-        <button id="button">Button</button>
-        <button id="button">Button</button>
-        <button id="button">Button</button>
+    <!-- NEXT -->
+    <!-- place these buttons in a parent div -->
+    <!-- and call the eventlistener by the parent div -->
+    <div id="buttondiv">
+        <h1>Buttons in a parent div</h1>
+        <button id="button2">Button in the div</button>
+        <button id="button2">Button in the div</button>
+        <button id="button2">Button in the div</button>
+        <button id="button2">Button in the div</button>
+    </div>
+
+
+    <hr>
+
+    <!-- COPIED FROM SO W/ diff ids for each button -->
+    <div id="parent">
+        <h1>Buttons copied from StackOverflow</h1>
+        <button id="button1">Button</button>
+        <button id="button2">Button 2</button>
+        <button id="button3">Button 3</button>
+        <button id="button4">Button 4</button>
+    </div>
 
         <!-- NEXT -->
         <!-- CREATE SOME BUTTONS IN THE DOM -->
 
     <script src="buttons.js"></script>
+    <script src="buttonsdiv.js"></script>
+    <script src="buttonstackoverflow.js"></script>
     
 </body>
 </html>
