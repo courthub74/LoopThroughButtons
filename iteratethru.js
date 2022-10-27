@@ -11,4 +11,4 @@ let first = document.querySelector("#one");
 first.addEventListener('click', function() {
     // call the global v goodmorning
     goodmorning('Good morning', 'red', 'black');
-})
+});
