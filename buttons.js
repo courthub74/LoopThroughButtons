@@ -11,12 +11,7 @@ document.getElementById("buttons").addEventListener('click', function(e){
         // test print the innerText of the button
         console.log(buttons.innerText);
         // set the innerText of each button pressed to something different
-        let button1 = document.getElementsByClassName("button1");
-        console.log(button1);
-        if (button1.innerText == "Button 1"){
-            button1.innerText = "Click'd";
-            console.log("test");
-        }
+       
     }
 });
 
