@@ -15,7 +15,7 @@ change1.addEventListener('click', function() {
         // change the innerText
         change1.innerText = "1 Clik'd";
     } else {
-        change1.innerText = "Change Me"
+        change1.innerText = "Change Me";
     }
 });
 
@@ -29,11 +29,16 @@ console.log(change2.innerHTML);
 // NOW that you've located the button
 // add the onclick event
 change2.addEventListener('click', function(){
-    change2.innerText = "2 Clik'd";
+    if (change2.innerText == "Change Me"){
+        // change the innerText
+        change2.innerText = "2 Clik'd";
+    } else {
+        change2.innerText = "Change Me";
+    }
 });
 
 
-// change me button 2
+// change me button 3
 // set a variable for the querySelector
 let change3 = document.querySelector("#text3");
 
@@ -43,5 +48,28 @@ console.log(change3.innerHTML);
 // NOW that you've located the button
 // add the onclick event
 change3.addEventListener('click', function(){
-    change3.innerText = "3 Clik'd";
+    if (change3.innerText == "Change Me"){
+        // change the innerText
+        change3.innerText = "3 Clik'd";
+    } else {
+        change3.innerText = "Change Me";
+    }
 });
+
+// change me button 4
+// set a variable for the querySelector
+let change4 = document.querySelector("#text4");
+
+// test print
+console.log(change4.innerHTML);
+
+// NOW that you've located the button
+// add the onclick event
+change4.addEventListener('click', function(){
+    if (change4.innerText == "Change Me"){
+        // change the innerText
+        change4.innerText = "4 Clik'd";
+    } else {
+        change4.innerText = "Change Me";
+    }
+})
