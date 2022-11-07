@@ -6,11 +6,11 @@ let buttons = document.querySelectorAll("#text");
 
 // test print with a for loop
 for (i = 0; i < buttons.length; i++){
-    // set a variable for buttons[i]
+    // store them all in a variable
     let allbuttons = buttons[i];
     // test print the buttons
     console.log(allbuttons.innerHTML);
-    // addEventListener for click
+    // addEventListener to the buttons for click
     allbuttons.addEventListener('click', function(){
         // if statement checks the innerHTML
         if (allbuttons.innerHTML == "Change Me"){
