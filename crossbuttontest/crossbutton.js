@@ -37,10 +37,6 @@ crossbutton.addEventListener('click', function(){
 });
 
 
-// NOW do multiple buttons and apply querySelectorAll
-// get all the cross buttons
-
-
 
 // EDIT BUTTON
 
@@ -72,4 +68,46 @@ editbutton.addEventListener('click', function(){
         document.getElementById("edittext").setAttribute('readonly', true);
     }
     }
+});
+
+// DELETE BUTTON
+
+// get the delete button by id
+var deletebutton = document.getElementById("delete");
+
+// test print
+console.log(deletebutton);
+
+// set up the eventlistener for the delete button
+deletebutton.addEventListener('click', function(){
+    // test print for button clicked
+    console.log("delete button clicked");
+    // check if delete button innerText says delete
+    if (deletebutton.innerText === "DELETE"){
+        // make it say 'put it back'
+        deletebutton.innerText = "PUT IT BACK";
+        // NEXT access the deletetext field to be removed
+            // and remove it
+        document.getElementById("deletetext").remove()
+    } else {
+        // check if delete button innerText says put it back
+        if (deletebutton.innerText === "PUT IT BACK"){
+            // make it say 'delete'
+            deletebutton.innerText = "DELETE";
+            // NEXT access the deletetext field
+                // put the text back
+                    // create text node
+            const dtext = document.createTextNode("You've Deleted and Replaced");
+            // access the deletetext field
+                // and store it in a variable
+            const replacedeleted = document.getElementById("deletetext");
+            console.log(dtext);
+            // append the child dtext to the field 
+            // replacedeleted.appendChild(dtext);
+        }
+    }
 })
+
+
+// NOW do multiple buttons and apply querySelectorAll
+// get all the cross buttons
