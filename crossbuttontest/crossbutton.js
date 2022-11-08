@@ -55,8 +55,12 @@ editbutton.addEventListener('click', function(){
         // change the innerText to 'save'
         editbutton.innerText = "SAVE";
         // NOW remove the readonly attribute from the edit field
-            // FIRST get the element by id
-        document.getElementById("edittext").removeAttribute('readonly', true);
+            // FIRST get the element by id and store it in a variable
+        let editfield = document.getElementById("edittext");
+        // remove the attribute readonly so you can edit the input field
+        editfield.removeAttribute('readonly', true);
+        // add the focus method so the cursor shows up on it
+        editfield.focus();
     } else {
     // test the click
     console.log("save button clicked");
@@ -102,8 +106,6 @@ deletebutton.addEventListener('click', function(){
                 // and store it in a variable
             const replacedeleted = document.getElementById("deletetext");
             console.log(dtext);
-            // append the child dtext to the field 
-            // replacedeleted.appendChild(dtext);
         }
     }
 })
