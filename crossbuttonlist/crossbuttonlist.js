@@ -1,3 +1,8 @@
+// ADD 
+// input field and submit button on a form
+// form.addEventListener
+    // create the input button fields in the DOM so it creates one at a time
+
 // for cross button list
 
 // first grab the crossbutton DOM element and store it in a variable
