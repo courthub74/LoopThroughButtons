@@ -29,10 +29,13 @@ window.addEventListener('load', () => {
         console.log("Todo Submitted");
 
         // get the value of the 'input' variable above and store it in another variable
+            // get the input by id
+       
         const todo = input.value;
 
         // test print input value
-        console.log(todo);
+        
+
 
         // Error handling
         if (!todo) {
@@ -74,6 +77,8 @@ window.addEventListener('load', () => {
         todo_input_element.classList.add('text');
         // set it's type
         todo_input_element.type = "text";
+        // set it's id
+        todo_input_element.id = "input";
         // set it's value. Which is the input value 'todo' variable
         todo_input_element.value = todo;
         // set it's attribute
@@ -127,7 +132,8 @@ window.addEventListener('load', () => {
         todo_actions_div.appendChild(todo_cross_button);
 
 
-        // set input value to blank after button clicked
+        // now set input value to blank after button clicked
+            // try getting this element by id and doing it again
         todo.value = '';
 
 
@@ -158,6 +164,45 @@ window.addEventListener('load', () => {
                     todo_edit_button.innerText = "EDIT";
                     // set the readonly attribute to the input field so you can't edit
                     todo_input_element.setAttribute('readonly', true);
+                }
+            }
+        });
+
+
+        // CROSS BUTTON
+            // this is where you:
+                // change the style to line through and then back again
+        todo_cross_button.addEventListener('click', (e) => {
+            // if statement to check for innerText of cross button
+            if (todo_cross_button.innerText.toLowerCase() === "cross-off"){
+                // test print
+                console.log("cross button pressed");
+                // change the innerText of the cross off button to uncross
+                todo_cross_button.innerText = "UNCROSS";
+                // get the input by id store in in a variable (just in case for now)
+                let input_element = document.getElementById("input");
+                // test print 
+                console.log(input_element);
+                // set style to line-through
+                input_element.style.textDecoration = "line-through";
+                // eliminate the edit button
+                todo_edit_button.style.display = "none";
+            } else {
+                // if statement to check for innerText of cross button
+                // set innerText of the uncross button back to cross
+                // scrap the Edit button
+                    // style.display to none and then to block
+                if (todo_cross_button.innerText.toLowerCase() === "uncross"){
+                    // test print
+                    console.log("uncross button pressed");
+                    // change the innerText of the uncross button back to cross-off
+                    todo_cross_button.innerText = "CROSS-OFF";
+                    // get the input by id store in in a variable (just in case for now)
+                    let input_element = document.getElementById("input");
+                    // unset the line-through style 
+                    input_element.style.textDecoration = "none";
+                    // bring the edit button back
+                    todo_edit_button.style.display = "block";
                 }
             }
         })
