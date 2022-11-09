@@ -134,10 +134,15 @@ window.addEventListener('load', () => {
 
         // now set input value to blank after button clicked
             // try getting this element by id and doing it again
-        todo.value = '';
+        // todo.value = '';
 
 
         // EVENT LISTENER TIME
+
+        // CLEAR THE FORM
+        // get id of the submit button
+        // addeventlistener that says
+            // todo.value = '';
 
         // EDIT BUTTON
             // this is where you:
