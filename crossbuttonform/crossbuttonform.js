@@ -83,7 +83,7 @@ window.addEventListener('load', () => {
             // which was appended to the todos div earlier
         todo_content_div.appendChild(todo_input_element);
 
-
+        // HERE IS WHERE YOU CAN SEND AND RENDER TO/FROM FIREBASE
 
         // ACTION ELEMENT
         // this is the bar of buttons (edit, delete, cross-off)
@@ -102,7 +102,7 @@ window.addEventListener('load', () => {
         // set it's class
         todo_edit_button.classList.add('edit');
         // set the inner text
-        todo_edit_button.innerText = "Edit";
+        todo_edit_button.innerText = "EDIT";
 
         // DELETE BUTTON
         // create the delete button
@@ -110,7 +110,7 @@ window.addEventListener('load', () => {
         // set it's class
         todo_delete_button.classList.add('delete');
         // set the inner text
-        todo_delete_button.innerText = "Delete";
+        todo_delete_button.innerText = "DELETE";
 
         // CROSS BUTTON
         // create the cross button
@@ -118,7 +118,7 @@ window.addEventListener('load', () => {
         // set it's class
         todo_cross_button.classList.add('cross');
         // set the inner text
-        todo_cross_button.innerText = "Cross-Off";
+        todo_cross_button.innerText = "CROSS-OFF";
 
         // append the buttons to the actions div
             // which was appended to the todos div earlier
@@ -130,5 +130,36 @@ window.addEventListener('load', () => {
         // set input value to blank after button clicked
         todo.value = '';
 
+
+        // EVENT LISTENER TIME
+
+        // EDIT BUTTON
+            // this is where you:
+                // set the innertext change on the button
+                // toggle the readonly attribute
+                // edit the changes in firebase
+        todo_edit_button.addEventListener('click', (e) => {
+            // if statement to check for innerText of edit button
+            if (todo_edit_button.innerText.toLowerCase() === "edit"){
+                // test print
+                console.log("edit button pressed");
+                // change the innerText
+                todo_edit_button.innerText = "SAVE";
+                // remove the readonly attribute from the input field so you can edit the field
+                todo_input_element.removeAttribute('readonly', true);
+                // place the cursor inside the field to be edited
+                todo_input_element.focus();
+            } else {
+                // if statement to check for innerText of save button
+                if (todo_edit_button.innerText.toLowerCase() === "save"){
+                    // test print
+                    console.log("save button pressed");
+                    // change the innerText
+                    todo_edit_button.innerText = "EDIT";
+                    // set the readonly attribute to the input field so you can't edit
+                    todo_input_element.setAttribute('readonly', true);
+                }
+            }
+        })
     });
 });
