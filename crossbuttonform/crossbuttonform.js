@@ -205,6 +205,17 @@ window.addEventListener('load', () => {
                     todo_edit_button.style.display = "block";
                 }
             }
-        })
+        });
+
+        // DELETE BUTTON
+            // this is where you:
+                // remove the input element from the display
+                // remove the data element from firebase
+        todo_delete_button.addEventListener('click', (e) => {
+            // test print the delete button
+            console.log("delete button pressed");
+            // remove the child input from the content div
+            todo_content_div.removeChild(todo_input_element);
+        });
     });
 });
