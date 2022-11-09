@@ -2,7 +2,7 @@
 // add an eventlistener to it
 
     // in the page, 
-    // give the form an event listener
+    // give the form an event listener through the submit button
         // in here create everything output wise
     
     // Then it should set everything one at a time
@@ -31,8 +31,11 @@ window.addEventListener('load', () => {
         // get the value of the 'input' variable above and store it in another variable
         const todo = input.value;
 
+        // test print input value
+        console.log(todo);
+
         // Error handling
-        if (!task) {
+        if (!todo) {
             alert("Please fill out the Todo");
             return;
         }
@@ -45,11 +48,11 @@ window.addEventListener('load', () => {
         // add the class to the div
         todo_div.classList.add('todos');
 
-        // append to the todos-list div
+        // append the todo div to the todos-list div
         todo_list_element.appendChild(todo_div);
 
 
-        
+
         // CONTENT DIV
         // create "content" div
         const todo_content_div = document.createElement('div');
@@ -57,7 +60,7 @@ window.addEventListener('load', () => {
         // add the class to the div
         todo_content_div.classList.add('content');
 
-        // append the "todos" div to the "content" div
+        // append the content div to the todos div 
         todo_div.appendChild(todo_content_div);
 
 
@@ -84,9 +87,13 @@ window.addEventListener('load', () => {
 
         // ACTION ELEMENT
         // this is the bar of buttons (edit, delete, cross-off)
-        todo_actions_div = document.createElement('div');
+        const todo_actions_div = document.createElement('div');
         // set it's class
         todo_actions_div.classList.add('actions');
+
+        // append the actions div to the todos div
+            // REMEMBER parent first and then appendChild to it
+        todo_div.appendChild(todo_actions_div);
 
 
         // EDIT BUTTON
@@ -113,6 +120,15 @@ window.addEventListener('load', () => {
         // set the inner text
         todo_cross_button.innerText = "Cross-Off";
 
+        // append the buttons to the actions div
+            // which was appended to the todos div earlier
+        todo_actions_div.appendChild(todo_edit_button);
+        todo_actions_div.appendChild(todo_delete_button);
+        todo_actions_div.appendChild(todo_cross_button);
+
+
+        // set input value to blank after button clicked
+        todo.value = '';
 
     });
 });
