@@ -49,6 +49,9 @@ window.addEventListener('load', () => {
             return;
         }
 
+        // clear the input field
+        input.value = '';
+
         // NOW this is where we push the todo variable to the firebaseTodo db reference
         firebaseTodo.push(todo);
         // test print the input
