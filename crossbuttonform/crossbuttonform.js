@@ -132,9 +132,8 @@ window.addEventListener('load', () => {
         todo_actions_div.appendChild(todo_cross_button);
 
 
-        // now set input value to blank after button clicked
-            // try getting this element by id and doing it again
-        // todo.value = '';
+        // now reset input value to blank after button clicked
+        input.value = '';
 
 
         // EVENT LISTENER TIME
