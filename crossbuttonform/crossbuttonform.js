@@ -218,7 +218,7 @@ window.addEventListener('load', () => {
         todo_delete_button.addEventListener('click', (e) => {
             // test print the delete button
             console.log("delete button pressed");
-            // remove the child input from the content div
+            // remove the child input from the content div (display)
             todo_content_div.removeChild(todo_input_element);
         });
     });
