@@ -88,7 +88,6 @@ window.addEventListener('load', () => {
             // which was appended to the todos div earlier
         todo_content_div.appendChild(todo_input_element);
 
-        // HERE IS WHERE YOU CAN SEND AND RENDER TO/FROM FIREBASE
 
         // ACTION ELEMENT
         // this is the bar of buttons (edit, delete, cross-off)
@@ -134,14 +133,9 @@ window.addEventListener('load', () => {
 
         // now reset input value to blank after button clicked
         input.value = '';
-
+        
 
         // EVENT LISTENER TIME
-
-        // CLEAR THE FORM
-        // get id of the submit button
-        // addeventlistener that says
-            // todo.value = '';
 
         // EDIT BUTTON
             // this is where you:

@@ -144,14 +144,101 @@ window.addEventListener('load', () => {
                 // you need to redefine 'todo' in this for loop
             todo_input_element.value = todosall;
             // test print 
-            console.log(todosall);
+            // console.log(todosall);
             // set it's attribute
             todo_input_element.setAttribute('readonly', true);
 
             // append the input element to the content div
                  // which was appended to the todos div earlier
             todo_content_div.appendChild(todo_input_element);
-        }
+
+
+            // ACTION ELEMENT
+            // this is the bar of buttons (edit, delete, cross-off)
+            const todo_actions_div = document.createElement('div');
+            // test print
+            console.log(todo_actions_div);
+            // set it's class
+            todo_actions_div.classList.add('actions');
+
+            // append the actions div to the todos div
+                // REMEMBER parent first and then appendChild to it
+                    // this is separate from the input on the todos div
+            todo_div.appendChild(todo_actions_div);
+
+            // EDIT BUTTON
+            // create the edit button
+            const todo_edit_button = document.createElement('button');
+            // set it's class
+            todo_edit_button.classList.add('edit');
+            // set the innerText
+            todo_edit_button.innerText = "EDIT";
+            // test print
+            console.log(todo_edit_button);
+
+            // append edit button to the actions div
+            todo_actions_div.appendChild(todo_edit_button);
+
+            // DELETE BUTTON
+            // create the delete button
+            const todo_delete_button = document.createElement('button');
+            // set it's class
+            todo_delete_button.classList.add('delete');
+            // set the innerText
+            todo_delete_button.innerText = "DELETE";
+            // test print
+            console.log(todo_delete_button);
+
+            // append delete button to the actions div
+            todo_actions_div.appendChild(todo_delete_button);
+
+            // CROSS OFF BUTTON
+            // create the cross off button
+            const todo_cross_button = document.createElement('button');
+            // set it's class
+            todo_cross_button.classList.add('cross');
+            // set the innerText
+            todo_cross_button.innerText = "CROSS-OFF";
+            // test print
+            console.log(todo_cross_button);
+
+            // append cross button to the actions div
+            todo_actions_div.appendChild(todo_cross_button);
+
+            // now reset input value to blank after button clicked
+                // you access the queried input field, not the todo value
+            input.value = '';
+
+
+            // EVENT LISTENER TIME
+
+            // EDIT BUTTON
+            // this is where you:
+                // set the innertext change on the button
+                // toggle the readonly attribute
+                // edit the changes in firebase
+            todo_edit_button.addEventListener('click', (e) => {
+                if (todo_edit_button.innerText.toLowerCase() === "edit") {
+                // test print
+                console.log("edit button pressed");
+                    // change the innerText
+                    todo_edit_button.innerText = "SAVE";
+                    // remove the readonly attribute from the input field so you can edit the field
+                    todo_input_element.removeAttribute('readonly', true);
+                    // place the cursor inside the field to be edited
+                    todo_input_element.focus();
+                } else {
+                    if (todo_edit_button.innerText.toLowerCase() === "save") {
+                    // test print
+                    console.log("save button pressed");
+                    // change the innerText
+                    todo_edit_button.innerText = "EDIT";
+                        // set the readonly attribute to the input field so you can't edit
+                    todo_input_element.setAttribute('readonly', true);
+                    }
+                }
+            })
+        };
     }
 
     // create the errTodo function
