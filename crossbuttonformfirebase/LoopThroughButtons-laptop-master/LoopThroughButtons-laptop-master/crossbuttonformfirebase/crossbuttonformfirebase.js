@@ -143,8 +143,8 @@ window.addEventListener('load', () => {
             // set it's value. Which is the input value 'todo' variable
                 // you need to redefine 'todo' in this for loop
             todo_input_element.value = todosall;
-            // test print 
-            // console.log(todosall);
+            // set it's style
+            todo_input_element.style.width = "300px";
             // set it's attribute
             todo_input_element.setAttribute('readonly', true);
 
@@ -233,8 +233,19 @@ window.addEventListener('load', () => {
                     console.log("save button pressed");
                     // change the innerText
                     todo_edit_button.innerText = "EDIT";
-                        // set the readonly attribute to the input field so you can't edit
+                    // set the readonly attribute to the input field so you can't edit
                     todo_input_element.setAttribute('readonly', true);
+                    // NOW save the change to firebase
+                     // NOW keep the edit in firebase
+                    // store value of the input in a variable
+                        // todosall
+                        let items = document.getElementById("input");
+                        // test print (ONLY GETS THE FIRST ONE)
+                            // JUST LEARN THE WHOLE THING
+                        console.log(items.value);
+                        // reference the database
+                        // and replace the old value with the new one
+                        // firebase.ref('firebasetodo/').push(items);
                     }
                 }
             })
