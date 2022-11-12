@@ -17,6 +17,10 @@ firebase.initializeApp(firebaseConfig);
 // create a reference for your database (give it a name to id by in firebase)
 var firebaseTodo = firebase.database().ref("firebasetodo");
 
+// test print
+console.log("Here is the DB");
+console.log(firebaseTodo);
+
 // NOW lets set up the page
 
 // whole page
@@ -91,7 +95,7 @@ window.addEventListener('load', () => {
             console.log(todosall);
 
             // start building the list elements 
-                // in the for lopp for each one
+                // in the for loop for each one
 
             
             // TODOS DIV
@@ -135,7 +139,7 @@ window.addEventListener('load', () => {
             console.log(todo_input_element);
 
             // add it's class
-            todo_input_element.classList.add('text');
+            todo_input_element.classList.add('input');
             // set it's type
             todo_input_element.type = "text";
             // set it's id
@@ -248,7 +252,66 @@ window.addEventListener('load', () => {
                         // firebase.ref('firebasetodo/').push(items);
                     }
                 }
-            })
+            });
+
+            // CROSS BUTTON
+                // this is where you:
+                    // change the style to line through and then back again
+            todo_cross_button.addEventListener('click', (e) => {
+                // if statement to check for innerText of cross button
+                if (todo_cross_button.innerText.toLowerCase() === "cross-off"){
+                    // test print 
+                    console.log("cross button pressed");
+                    // change the innerText of the cross off button to uncross
+                    todo_cross_button.innerText = "UNCROSS";
+                    // get the input by id and store in a variable (just in case)
+                        // get the multiple elements 
+                            // loop through
+                    var input_element = document.querySelectorAll("#input");
+                    // 4 loop
+                    for (i = 0; i < input_element.length; i++){
+                        input_element[i].style.textDecoration =  "line-through";
+                        // how do I make this apply to the only line its on
+                    }
+                    // for each all of them
+                    // input_element.forEach()
+                    // test print 
+                    console.log(input_element);
+                    // change the style to line through
+                    input_element.style.textDecoration = "line-through";
+                } else {
+                    // if statement to check for innerText of cross button
+                    // set innerText of the uncross button back to cross
+                    // scrap the Edit button
+                    // style.display to none and then to block
+                    if (todo_cross_button.innerText.toLowerCase() === "uncross"){
+                        // test print
+                        console.log("uncross button pressed");
+                        // change the innerText of the uncross button back to cross-off
+                        todo_cross_button.innerText = "CROSS-OFF";
+                        // get the input by id store in in a variable (just in case for now)
+                        let input_element = document.getElementById("input");
+                        // unset the line-through style 
+                        input_element.style.textDecoration = "none";
+                        // bring the edit button back
+                        todo_edit_button.style.display = "block";
+                    }
+                }
+            });
+
+            // DELETE BUTTON
+            // this is where you:
+                // remove the input element from the display
+                // remove the data element from firebase
+            todo_delete_button.addEventListener('click', (e) => {
+            // test print the delete button
+            console.log("delete button pressed");
+            // remove the child input from the content div
+            todo_content_div.removeChild(todo_input_element);
+            // NOW to remove the data element from firebase
+                // first referenct the database and the actual database list and key
+            firebaseTodo.ref('firebasetodo/' + keys).remove();
+            });
         };
     }
 
