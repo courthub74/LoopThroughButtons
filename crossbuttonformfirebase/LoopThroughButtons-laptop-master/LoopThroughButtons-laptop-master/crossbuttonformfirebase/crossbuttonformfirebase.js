@@ -270,11 +270,9 @@ window.addEventListener('load', () => {
                     var input_element = document.querySelectorAll("#input");
                     // 4 loop
                     for (i = 0; i < input_element.length; i++){
-                        input_element[i].style.textDecoration =  "line-through";
-                        // how do I make this apply to the only line its on
+                        input_element.style[i].textDecoration =  "line-through";
+                        // how do I make this apply to the only line its own
                     }
-                    // for each all of them
-                    // input_element.forEach()
                     // test print 
                     console.log(input_element);
                     // change the style to line through
@@ -307,7 +305,7 @@ window.addEventListener('load', () => {
             // test print the delete button
             console.log("delete button pressed");
             // remove the child input from the content div
-            todo_content_div.removeChild(todo_input_element);
+            todo_list_element.removeChild(todo_div);
             // NOW to remove the data element from firebase
                 // first referenct the database and the actual database list and key
             firebaseTodo.ref('firebasetodo/' + keys).remove();
