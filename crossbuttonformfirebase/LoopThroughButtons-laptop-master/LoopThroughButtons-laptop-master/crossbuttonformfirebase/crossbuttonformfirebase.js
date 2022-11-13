@@ -270,13 +270,13 @@ window.addEventListener('load', () => {
                     var input_element = document.querySelectorAll("#input");
                     // 4 loop
                     for (i = 0; i < input_element.length; i++){
-                        input_element.style[i].textDecoration =  "line-through";
+                        input_element[i].style.textDecoration =  "line-through";
                         // how do I make this apply to the only line its own
                     }
                     // test print 
-                    console.log(input_element);
+                    // console.log(input_element);
                     // change the style to line through
-                    input_element.style.textDecoration = "line-through";
+                    // input_element.style.textDecoration = "line-through";
                 } else {
                     // if statement to check for innerText of cross button
                     // set innerText of the uncross button back to cross
