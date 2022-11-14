@@ -300,7 +300,19 @@ window.addEventListener('load', () => {
             todo_list_element.removeChild(todo_div);
             // NOW to remove the data element from firebase
                 // first referenct the database and the actual database list and key
-            firebaseTodo.ref('firebasetodo/' + keys).remove();
+                console.log("Here is the DB");
+                console.log(firebaseTodo);
+                // find the specific todo in this firebase function
+                    // Below gives you the innerText value of the db object
+                        // and it's correspoding key
+                firebaseTodo.orderByValue().on('child_added', function(snapshot){
+                    console.log(snapshot.val(), snapshot.key);
+                });
+                // NOW how do I get the acurate deletion
+                    // of the corresponding output
+                
+                // BELOW deletes the whole thing
+                // firebaseTodo.remove();
             });
         };
     }
