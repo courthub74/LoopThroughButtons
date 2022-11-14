@@ -144,6 +144,9 @@ window.addEventListener('load', () => {
             todo_input_element.type = "text";
             // set it's id
             todo_input_element.id = "input";
+            // ABOVE you may need to assign an iterative id 
+                // to correspond to each button
+                
             // set it's value. Which is the input value 'todo' variable
                 // you need to redefine 'todo' in this for loop
             todo_input_element.value = todosall;
