@@ -146,7 +146,7 @@ window.addEventListener('load', () => {
             todo_input_element.id = "input";
             // ABOVE you may need to assign an iterative id 
                 // to correspond to each button
-                
+
             // set it's value. Which is the input value 'todo' variable
                 // you need to redefine 'todo' in this for loop
             todo_input_element.value = todosall;
@@ -267,19 +267,10 @@ window.addEventListener('load', () => {
                     console.log("cross button pressed");
                     // change the innerText of the cross off button to uncross
                     todo_cross_button.innerText = "UNCROSS";
-                    // get the input by id and store in a variable (just in case)
-                        // get the multiple elements 
-                            // loop through
-                    var input_element = document.querySelectorAll("#input");
-                    // 4 loop
-                    for (i = 0; i < input_element.length; i++){
-                        input_element[i].style.textDecoration =  "line-through";
-                        // how do I make this apply to the only line its own
-                    }
-                    // test print 
-                    // console.log(input_element);
-                    // change the style to line through
-                    // input_element.style.textDecoration = "line-through";
+                    // change the CSS
+                    todo_input_element.style.textDecoration = "line-through";
+                    // eliminate the edit button
+                    todo_edit_button.style.display = "none";
                 } else {
                     // if statement to check for innerText of cross button
                     // set innerText of the uncross button back to cross
@@ -290,10 +281,8 @@ window.addEventListener('load', () => {
                         console.log("uncross button pressed");
                         // change the innerText of the uncross button back to cross-off
                         todo_cross_button.innerText = "CROSS-OFF";
-                        // get the input by id store in in a variable (just in case for now)
-                        let input_element = document.getElementById("input");
-                        // unset the line-through style 
-                        input_element.style.textDecoration = "none";
+                        // unset the line-through style
+                        todo_input_element.style.textDecoration = "none";
                         // bring the edit button back
                         todo_edit_button.style.display = "block";
                     }
