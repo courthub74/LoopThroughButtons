@@ -246,13 +246,14 @@ window.addEventListener('load', () => {
                      // NOW keep the edit in firebase
                      let updated = todo_input_element.value;
                     // test print 
-                     console.log(updated);
+                    //  console.log(updated);
                         // test print db + updated element
                         console.log(firebaseTodo, "firebaseTodo/" + updated);
                         // now how do you delete this thing?
                             // try the set({updated})
-                                // This deletes the whole thing
-                        firebaseTodo.set({updated});
+                                // This deletes the whole thing     
+                                    // and sets to the one entered
+                        firebaseTodo.set(updated);
                     }
                 }
             });
@@ -314,7 +315,7 @@ window.addEventListener('load', () => {
                 // firebase input test print
                 console.log(firebaseTodo, "firebaseTodo/" + updated);
                 // BELOW deletes the whole thing
-                remove(firebaseTodo, "firebaseTodo/" + updated);
+                // remove(firebaseTodo, "firebaseTodo/" + updated);
                 // firebaseTodo.remove({updated});
             });
         };
