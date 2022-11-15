@@ -310,9 +310,12 @@ window.addEventListener('load', () => {
                 });
                 // NOW how do I get the acurate deletion
                     // of the corresponding output
-                
+                let updated = todo_input_element.value;
+                // firebase input test print
+                console.log(firebaseTodo, "firebaseTodo/" + updated);
                 // BELOW deletes the whole thing
-                // firebaseTodo.remove();
+                remove(firebaseTodo, "firebaseTodo/" + updated);
+                // firebaseTodo.remove({updated});
             });
         };
     }
