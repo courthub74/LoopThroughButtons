@@ -244,15 +244,15 @@ window.addEventListener('load', () => {
                     todo_input_element.setAttribute('readonly', true);
                     // NOW save the change to firebase
                      // NOW keep the edit in firebase
-                    // store value of the input in a variable
-                        // todosall
-                        let items = document.getElementById("input");
-                        // test print (ONLY GETS THE FIRST ONE)
-                            // JUST LEARN THE WHOLE THING
-                        console.log(items.value);
-                        // reference the database
-                        // and replace the old value with the new one
-                        // firebase.ref('firebasetodo/').push(items);
+                     let updated = todo_input_element.value;
+                    // test print 
+                     console.log(updated);
+                        // test print db + updated element
+                        console.log(firebaseTodo, "firebaseTodo/" + updated);
+                        // now how do you delete this thing?
+                            // try the set({updated})
+                                // This deletes the whole thing
+                        firebaseTodo.set({updated});
                     }
                 }
             });
