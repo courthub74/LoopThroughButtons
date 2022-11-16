@@ -21,6 +21,9 @@ var firebaseTodo = firebase.database().ref("firebasetodo");
 console.log("Here is the DB");
 console.log(firebaseTodo);
 
+// import the database
+// import {getDatabase, ref, get, set, child, update, remove} from "https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js";
+
 // NOW lets set up the page
 
 // whole page
@@ -249,11 +252,8 @@ window.addEventListener('load', () => {
                     //  console.log(updated);
                         // test print db + updated element
                         console.log(firebaseTodo, "firebaseTodo/" + updated);
-                        // now how do you delete this thing?
-                            // try the set({updated})
-                                // This deletes the whole thing     
-                                    // and sets to the one entered
-                        firebaseTodo.set(updated);
+                        // now how do you edit this thing?
+                           
                     }
                 }
             });
@@ -314,9 +314,8 @@ window.addEventListener('load', () => {
                 let updated = todo_input_element.value;
                 // firebase input test print
                 console.log(firebaseTodo, "firebaseTodo/" + updated);
-                // BELOW deletes the whole thing
-                // remove(firebaseTodo, "firebaseTodo/" + updated);
-                // firebaseTodo.remove({updated});
+                // NOW how do you delete this thing
+               
             });
         };
     }
