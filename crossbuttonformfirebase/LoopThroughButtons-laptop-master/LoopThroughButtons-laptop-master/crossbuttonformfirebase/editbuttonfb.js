@@ -210,6 +210,8 @@ window.addEventListener('load', () => {
 
         // append edit button to the actions div
         todo_actions_div.appendChild(todo_edit_button);
+
+        // DELETE BUTTON
     }
 
     }
