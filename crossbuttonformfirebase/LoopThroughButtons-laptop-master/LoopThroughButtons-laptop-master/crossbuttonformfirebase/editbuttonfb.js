@@ -110,7 +110,7 @@ window.addEventListener('load', () => {
     }
     // iterate through the todoitems entered
     for (let i = 0; i < data.length; i++) {
-        // create a variable for the delivs iteration
+        // store the todos iteration in a variable
         var todosall = data[i];
         // test print
         console.log('todosall ===', todosall);
@@ -292,8 +292,8 @@ window.addEventListener('load', () => {
         });
 
         // CROSS BUTTON
-                // this is where you:
-                    // change the style to line through and then back again
+            // this is where you:
+                // change the style to line through and then back again
         // add event listener
         todo_cross_button.addEventListener('click', (e) => {
             // if statement to check for innerText of cross button
@@ -319,6 +319,41 @@ window.addEventListener('load', () => {
                     todo_edit_button.style.display = "block";
                 }
             }
+        });
+
+        // DELETE BUTTON
+            // this is where you:
+                // remove the input element from the display
+                // remove the data element from firebase
+        todo_delete_button.addEventListener('click', (e) => {
+            // store the id in a variable that is the target of event
+            let id = e.target.id;
+            // test print the delete button
+            console.log("delete button pressed", id);
+            // remove the child input from the content div
+            todo_list_element.removeChild(todo_div);
+            // NOW to remove the data element from firebase
+                // first referenct the database and the actual database list and key
+                console.log("Here is the DB");
+                console.log(firebaseTodo);
+                // find the specific todo in this firebase function
+                    // Below gives you the innerText value of the db object
+                        // and it's correspoding key
+                        firebaseTodo.orderByValue().on('child_added', function(snapshot){
+                            console.log(snapshot.val(), snapshot.key);
+                        });
+            // NOW how do I get the acurate deletion
+                    // of the corresponding output
+                    let updated = todo_input_element.value;
+                // test print updated
+                console.log(updated, id);
+                // NOW delete in firebase
+                // locate the firebase reference by each item id
+                    // apply the remove function
+                firebase.database().ref(`firebasetodo/${id}`).remove({
+                    // the todo item and by the todo_input_element's value
+                    todo: updated
+                });
         });
     }
 
