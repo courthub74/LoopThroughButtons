@@ -350,10 +350,8 @@ window.addEventListener('load', () => {
                 // NOW delete in firebase
                 // locate the firebase reference by each item id
                     // apply the remove function
-                firebase.database().ref(`firebasetodo/${id}`).remove({
-                    // the todo item and by the todo_input_element's value
-                    todo: updated
-                });
+                let tester = firebase.database().ref(`firebasetodo/${id}`);
+                console.log(tester);
         });
     }
 
