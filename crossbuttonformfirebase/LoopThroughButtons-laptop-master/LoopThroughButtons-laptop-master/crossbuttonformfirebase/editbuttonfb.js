@@ -96,6 +96,8 @@ window.addEventListener('load', () => {
                 // data array
             data.push({
                 id: element,
+                // item is value with id(key) set to the 'todo' name under the 
+                    // firebase todo db list
                 item: todos[element]['todo']
             })
         });
@@ -252,7 +254,7 @@ window.addEventListener('load', () => {
                 // toggle the readonly attribute
                 // edit the changes in firebase
         todo_edit_button.addEventListener('click', (e) => {
-            // store the id in a variable that is the target of event
+            // store the id in a variable that is the target of event (the key)
             let id = e.target.id;
             // check the text in order to change it
             if (todo_edit_button.innerText.toLowerCase() === "edit"){
@@ -276,8 +278,8 @@ window.addEventListener('load', () => {
                     // NOW save the change to firebase
                      // NOW keep the edit in firebase
                     let updated = todo_input_element.value;
-                    // test print
-                    console.log(updated);
+                    // // test print
+                    console.log(updated, id);
                     // test print db + updated element
                     console.log(firebaseTodo, "firebaseTodo/" + updated);
                     // NOW edit in firebase
@@ -326,6 +328,7 @@ window.addEventListener('load', () => {
                 // remove the input element from the display
                 // remove the data element from firebase
         todo_delete_button.addEventListener('click', (e) => {
+            e.stopPropagation();
             // store the id in a variable that is the target of event
             let id = e.target.id;
             // test print the delete button
@@ -342,16 +345,17 @@ window.addEventListener('load', () => {
                         firebaseTodo.orderByValue().on('child_added', function(snapshot){
                             console.log(snapshot.val(), snapshot.key);
                         });
-            // NOW how do I get the acurate deletion
+                // NOW how do I get the acurate deletion
                     // of the corresponding output
-                    let updated = todo_input_element.value;
+                let updated = todo_input_element.value;
                 // test print updated
-                console.log(updated, id);
+                // console.log(updated, id);
+                // lets store it in a variable
+                let todelete = (firebaseTodo, id);
+                // test print the particular ID
+                console.log(todelete);
                 // NOW delete in firebase
-                // locate the firebase reference by each item id
-                    // apply the remove function
-                let tester = firebase.database().ref(`firebasetodo/${id}`);
-                console.log(tester);
+                firebase.database().ref(`firebasetodo/${id}`).delete()
         });
     }
 
