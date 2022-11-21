@@ -345,17 +345,10 @@ window.addEventListener('load', () => {
                         firebaseTodo.orderByValue().on('child_added', function(snapshot){
                             console.log(snapshot.val(), snapshot.key);
                         });
-                // NOW how do I get the acurate deletion
-                    // of the corresponding output
-                let updated = todo_input_element.value;
-                // test print updated
-                // console.log(updated, id);
-                // lets store it in a variable
-                let todelete = (firebaseTodo, id);
-                // test print the particular ID
-                console.log(todelete);
-                // NOW delete in firebase
-                firebase.database().ref(`firebasetodo/${id}`).delete()
+                // test print the location in the db
+                console.log(`firebasetodo/${id}`);
+                // NOW delete in firebase by id
+                firebase.database().ref(`firebasetodo/${id}`).remove();
         });
     }
 
