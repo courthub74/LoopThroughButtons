@@ -1,5 +1,8 @@
 // COLORS
 $background: #F3F9FF;
+$darkblue: #243F67;
+$thegreen: #3C908B;
+$alertblue: #3292FA;
 
 // WHOLE PAGE
 * {
@@ -15,40 +18,100 @@ $background: #F3F9FF;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            h3 {
+                color: orangered;
+                padding-left: 20px;
+            }
+                header {
+                    padding-left: 20px;
+                // HEADER INPUT FIELD TEXTFIELD AND BUTTON
+                // input part
+                #new-fill-input {
+                    background-color: $background;
+                    color: gray;
+                    border: $darkblue 2px solid;
+                    padding: 10px;
+                    width: 500px;
+                }
+                // submit button
+                #new-fill-submit {
+                    background-color: $background;
+                    border: $darkblue 2px solid;
+                    padding: 10px;
+                    width: 200px;
+                }
+            }
+        // PAGE STUFF
         main {
             // background-color: aqua;
+            padding-top: 50px;
             flex: 1 1 0%;
             width: 100%;
             max-width: 800px;
             margin: 10 auto;
+            h2 {
+                padding-left: 20px;
+            }
             #todos-list {
                 padding: 1rem;
             }
-            .todos {
-                border: 1px solid black;
-                padding: 30px;
-                display: flex;
-                justify-content: space-between;
-                padding: 1rem;
-                margin-bottom: 1rem;
-                transition: all .3s ease-in;
-            }
-            // The output part of each todo
-            .content {
-                input {
-                    background-color: $background;
-                    border: none;
-                    font-weight: bold;
-                    font-size: 1.3rem;
-                }
-            }
-            // pops up when it is NOT read-only (for edit)
-            .content:not(:read-only){
-                color: aquamarine;
-                transition: all .4s ease-in;
-                appearance: none;
-                border: none;
-                outline: none;
+                .todos {
+                    border: 1px solid black;
+                    padding: 30px;
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 1rem;
+                    margin-bottom: 1rem;
+                    transition: all .3s ease-in;
+                        // The output part of each todo
+                        .content {
+                            input {
+                                background-color: $background;
+                                border: none;
+                                font-size: 1.2rem;
+                            }
+                        }
+                        // pops up when it is NOT read-only (for edit)
+                        .content:not(:read-only){
+                            color: aquamarine;
+                            transition: all .4s ease-in;
+                            appearance: none;
+                            border: none;
+                            outline: none;
+                        }
+                // The button group
+                .actions {
+                    display: flex;
+                    margin: 0 -0.5rem;
+                        // each button
+                        button {
+                            cursor: pointer;
+                            margin: 0 0.5rem;
+                            font-size: 1rem;
+                            font-weight: 400;
+                            text-transform: uppercase;
+                            transition: 0.4s;
+                        }
+                        // EDIT button
+                        .edit {
+                            background-color: $background;
+                            border: none;
+                            color: $alertblue;
+                            font-size: 15px;
+                        }
+                        .delete {
+                            background-color: $background;
+                            border: none;
+                            color: $thegreen;
+                            font-size: 15px;
+                        }
+                        .cross {
+                            background-color: $background;
+                            border: none;
+                            color: $darkblue;
+                            font-size: 15px;
+                        }
+                    }
             }
         }
     }

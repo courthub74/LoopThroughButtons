@@ -12,11 +12,35 @@
   flex-direction: column;
   min-height: 100vh;
 }
+* body h3 {
+  color: orangered;
+  padding-left: 20px;
+}
+* body header {
+  padding-left: 20px;
+}
+* body header #new-fill-input {
+  background-color: #F3F9FF;
+  color: gray;
+  border: #243F67 2px solid;
+  padding: 10px;
+  width: 500px;
+}
+* body header #new-fill-submit {
+  background-color: #F3F9FF;
+  border: #243F67 2px solid;
+  padding: 10px;
+  width: 200px;
+}
 * body main {
+  padding-top: 50px;
   flex: 1 1 0%;
   width: 100%;
   max-width: 800px;
   margin: 10 auto;
+}
+* body main h2 {
+  padding-left: 20px;
 }
 * body main #todos-list {
   padding: 1rem;
@@ -30,13 +54,12 @@
   margin-bottom: 1rem;
   transition: all 0.3s ease-in;
 }
-* body main .content input {
+* body main .todos .content input {
   background-color: #F3F9FF;
   border: none;
-  font-weight: bold;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 }
-* body main .content:not(:-moz-read-only) {
+* body main .todos .content:not(:-moz-read-only) {
   color: aquamarine;
   -moz-transition: all 0.4s ease-in;
   transition: all 0.4s ease-in;
@@ -45,7 +68,7 @@
   border: none;
   outline: none;
 }
-* body main .content:not(:read-only) {
+* body main .todos .content:not(:read-only) {
   color: aquamarine;
   transition: all 0.4s ease-in;
   -webkit-appearance: none;
@@ -53,4 +76,34 @@
           appearance: none;
   border: none;
   outline: none;
+}
+* body main .todos .actions {
+  display: flex;
+  margin: 0 -0.5rem;
+}
+* body main .todos .actions button {
+  cursor: pointer;
+  margin: 0 0.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  transition: 0.4s;
+}
+* body main .todos .actions .edit {
+  background-color: #F3F9FF;
+  border: none;
+  color: #3292FA;
+  font-size: 15px;
+}
+* body main .todos .actions .delete {
+  background-color: #F3F9FF;
+  border: none;
+  color: #3C908B;
+  font-size: 15px;
+}
+* body main .todos .actions .cross {
+  background-color: #F3F9FF;
+  border: none;
+  color: #243F67;
+  font-size: 15px;
 }/*# sourceMappingURL=editbutton.css.map */
