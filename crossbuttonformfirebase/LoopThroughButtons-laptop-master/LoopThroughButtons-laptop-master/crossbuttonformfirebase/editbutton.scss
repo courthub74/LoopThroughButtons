@@ -69,15 +69,16 @@ $alertblue: #3292FA;
                                 background-color: $background;
                                 border: none;
                                 font-size: 1.2rem;
+                                transition: all .4s ease-in;
                             }
-                        }
-                        // pops up when it is NOT read-only (for edit)
-                        .content:not(:read-only){
-                            color: aquamarine;
-                            transition: all .4s ease-in;
-                            appearance: none;
-                            border: none;
-                            outline: none;
+                            // pops up when it is NOT read-only (for edit)
+                            input:not(:read-only){
+                                color: $alertblue;
+                                transition: all .4s ease-in;
+                                appearance: none;
+                                border: none;
+                                outline: none;
+                            }
                         }
                 // The button group
                 .actions {

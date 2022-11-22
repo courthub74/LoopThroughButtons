@@ -58,9 +58,10 @@
   background-color: #F3F9FF;
   border: none;
   font-size: 1.2rem;
+  transition: all 0.4s ease-in;
 }
-* body main .todos .content:not(:-moz-read-only) {
-  color: aquamarine;
+* body main .todos .content input:not(:-moz-read-only) {
+  color: #3292FA;
   -moz-transition: all 0.4s ease-in;
   transition: all 0.4s ease-in;
   -moz-appearance: none;
@@ -68,8 +69,8 @@
   border: none;
   outline: none;
 }
-* body main .todos .content:not(:read-only) {
-  color: aquamarine;
+* body main .todos .content input:not(:read-only) {
+  color: #3292FA;
   transition: all 0.4s ease-in;
   -webkit-appearance: none;
      -moz-appearance: none;
