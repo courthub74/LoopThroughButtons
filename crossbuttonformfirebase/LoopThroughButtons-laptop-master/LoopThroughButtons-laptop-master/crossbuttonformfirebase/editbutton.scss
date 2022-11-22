@@ -1,0 +1,55 @@
+// COLORS
+$background: #F3F9FF;
+
+// WHOLE PAGE
+* {
+    list-style: none;
+    text-decoration: none;
+    margin: 10;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+        // PAGE BODY
+        body {
+            background-color: $background;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        main {
+            // background-color: aqua;
+            flex: 1 1 0%;
+            width: 100%;
+            max-width: 800px;
+            margin: 10 auto;
+            #todos-list {
+                padding: 1rem;
+            }
+            .todos {
+                border: 1px solid black;
+                padding: 30px;
+                display: flex;
+                justify-content: space-between;
+                padding: 1rem;
+                margin-bottom: 1rem;
+                transition: all .3s ease-in;
+            }
+            // The output part of each todo
+            .content {
+                input {
+                    background-color: $background;
+                    border: none;
+                    font-weight: bold;
+                    font-size: 1.3rem;
+                }
+            }
+            // pops up when it is NOT read-only (for edit)
+            .content:not(:read-only){
+                color: aquamarine;
+                transition: all .4s ease-in;
+                appearance: none;
+                border: none;
+                outline: none;
+            }
+        }
+    }
+}

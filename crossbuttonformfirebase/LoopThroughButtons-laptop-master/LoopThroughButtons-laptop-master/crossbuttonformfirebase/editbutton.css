@@ -1,0 +1,56 @@
+* {
+  list-style: none;
+  text-decoration: none;
+  margin: 10;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+* body {
+  background-color: #F3F9FF;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+* body main {
+  flex: 1 1 0%;
+  width: 100%;
+  max-width: 800px;
+  margin: 10 auto;
+}
+* body main #todos-list {
+  padding: 1rem;
+}
+* body main .todos {
+  border: 1px solid black;
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease-in;
+}
+* body main .content input {
+  background-color: #F3F9FF;
+  border: none;
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+* body main .content:not(:-moz-read-only) {
+  color: aquamarine;
+  -moz-transition: all 0.4s ease-in;
+  transition: all 0.4s ease-in;
+  -moz-appearance: none;
+       appearance: none;
+  border: none;
+  outline: none;
+}
+* body main .content:not(:read-only) {
+  color: aquamarine;
+  transition: all 0.4s ease-in;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: none;
+  outline: none;
+}/*# sourceMappingURL=editbutton.css.map */
