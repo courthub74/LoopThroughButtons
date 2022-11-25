@@ -91,6 +91,10 @@ window.addEventListener('load', () => {
         // test print the keys
         console.log(keys);
         // iterate through the todoitems entered
+        // create an empty array 
+        // push the keys/todos to that array
+        // loop through thqt array 
+        
         for(let i in todos){
             // create a variable for the delivs iteration
             var todosall = todos[i];
